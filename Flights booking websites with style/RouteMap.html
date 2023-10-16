@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body{background-color:lightblue;}
+</style>
+<body>
+	<h1>Route Map</h1>
+	<img src="gps.jpg" alt="web"style="float:right;width:700px;height:450px;"><br><br>
+	<p>Location Coordinates.</p>
+	<p>Click Me!</p>
+	<button onclick="getLocation()">Try It</button>
+	<p id="demo"></p>
+<script>
+	var x = document.getElementById("demo");
+	function getLocation() {
+	if(navigator.geolocation) { 
+	navigator.geolocation.getCurrentPosition(showPosition);} 
+	else{x.innerHTML= "This browser do not support Geolocation.";}
+	}
+	function showPosition(position) { x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude:" + position.coords.longitude;
+	}
+</script>
+</body>
+</html>
+   
